@@ -1,0 +1,38 @@
+{
+  "name": "loony-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server/index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.server.js & webpack --config webpack.config.client.js",
+    "dev": "babel-node ./src/server/index.js",
+    "start": "npm run build && node ./dist/server/index.js"
+  },
+  "keywords": [],
+  "author": "Marcus Jurkat",
+  "license": "ISC",
+  "dependencies": {
+    "ect": "^0.5.9",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.14",
+    "copy-webpack-plugin": "^4.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "reload-server-webpack-plugin": "^1.0.1",
+    "universal-hot-reload": "^0.5.3",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-node-externals": "^1.5.4"
+  }
+}
