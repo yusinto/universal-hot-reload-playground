@@ -5,16 +5,16 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
-    .filter(function (x) {
-        return ['.bin'].indexOf(x) === -1;
-    })
-    .forEach(function (mod) {
-        nodeModules[mod] = 'commonjs ' + mod;
-    });
+  .filter(function (x) {
+      return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function (mod) {
+      nodeModules[mod] = 'commonjs ' + mod;
+  });
 
 module.exports = {
     devtool: 'source-map',
-    entry: ['./src/server/index.js'],
+    entry: ['./src/server/server.js'],
     target: 'node',
     node: {
         __dirname: false,
@@ -48,7 +48,7 @@ module.exports = {
         }),
         new webpack.IgnorePlugin(/\.(css|less)$/),
         new webpack.BannerPlugin('require("source-map-support").install();',
-            { raw: true, entryOnly: false }
+          { raw: true, entryOnly: false }
         )
     ],
 }
